@@ -29,6 +29,8 @@ public class Main {
                         }
                     } while (inventory.searchUser(temporalId)==false);
                     String Choice=JOptionPane.showInputDialog(null, "A continuacion podra encontrar nuestro catalogo de libros"+inventory.ShowInfoBooks()+"\n Escriba el id del producto que desea seleccionar");
+                    int Stock=inventory.getStock(Choice);
+                    inventory.setStock(Stock, Choice);
                     Lending lending= new Lending(inventory.getUser(temporalId), inventory.searchBook(Choice));
                     inventory.getUser(temporalId).AddLending(lending);
                     JOptionPane.showMessageDialog(null, "Libro agregado a nombre de "+inventory.getUser(temporalId).getName()+"\n Info libro:"+inventory.InfoBook(Choice)+"\n Fecha de pedido: "+lending.ShowLendingDate()+"\n fecha de vencimiento: "+lending.ShowReturnDate(), Choice, user);

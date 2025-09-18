@@ -56,4 +56,21 @@ public class Inventory {
         }
         return info;
     }
+
+    public int getStock(String id){
+        for (Book book : ListBooks) {
+            if (book.getId().equals(id)) {
+                return book.getStock();
+            }
+        }
+        return 0;
+    }
+    public void setStock(int stock , String id){
+        for (Book book : ListBooks) {
+            if (book.getId().equals(id)) {
+                book.setStock(stock-1);
+            }
+        }
+    }
+    
 }
