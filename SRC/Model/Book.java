@@ -1,4 +1,7 @@
 package SRC.Model;
+
+import java.util.ArrayList;
+
 class Book {
     private String id;
     public String name;
@@ -38,6 +41,5 @@ class Book {
         this.stock = stock;
     }
     
-
     
 }
